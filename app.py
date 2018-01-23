@@ -68,9 +68,8 @@ def ratinginfo():
         rat.append(divss[2].div.a.text)
         rat.append(divss[2].strong.text)
         user_rating.append(rat)
-    users[flask_login.current_user.id]['rating']=user_rating
     data={}
-    data['rating']=user_rating    
+    data['rating']=user_rating
     user_record.update_one({'email':flask_login.current_user.id},{"$set":data})
     return user_record.find_one({'email':flask_login.current_user.id})['rating']
 #RATING INFO GENERATION END
