@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Questions Solved</title>
+</head>
+<body>
+	<div align="center" style="color:#0000FF">
+		{% for i in range(2) %}
+			<h1>{{headings[i]}}</h1>
+			{% for j in range(head_text[i]|length) %}
+				<h2>{{head_text[i][j]}}</h2>
+				{% for k in range(all_text[i][j]|length) %}
+					<a href={{hrefs[i][j][k]}}>{{all_text[i][j][k]}}</a>
+				{% endfor %}
+			{% endfor %}
+		{% endfor %}
+	</div>
+	<div align="left">
+		<a href="{{url_for('home')}}">Home</a>
+	</div>
+	<div align="right">
+		<a href="{{url_for('logout')}}">Logout</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rating</title>
+</head>
+<body>
+	<div align="center" style="color:#0000FF">
+		<table border=1>
+			<tbody>
+				<tr>
+					<th>Rating</th>
+					<th>Challenge</th>
+					<th>Global Rating</th>
+				</tr>
+				{% for row in user_rating %}
+					<tr>
+						{% for column in row %}
+							<td>
+								{{column}}
+							</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div align="left">
+		<a href="{{url_for('home')}}">Home</a>
+	</div>
+	<div align="right">
+		<a href="{{url_for('logout')}}">Logout</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About</title>
+</head>
+<body>
+	<div align="center" style="color:#0000FF">
+		<h3>Name:{{abt['Name']}}</h3>
+		<h3>Username:{{abt['Username:']}}</h3>
+		<h3>State:{{abt['State:']}}</h3>
+		<h3>Institution:{{abt['Institution:']}}</h3>
+		<h3>Student/Professional:{{abt['Student/Professional:']}}</h3>
+		<h3>Country:{{abt['Country:']}}</h3>
+		<h3>City:{{abt['City:']}}</h3>
+		<h3>Global Rank:{{abt['Global Rank:']}}</h3>
+		<h3>Country Rank:{{abt['Country Rank:']}}</h3>
+	</div>
+	<div align="left">
+		<a href="{{url_for('home')}}">Home</a>
+	</div>
+	<div align="right">
+		<a href="{{url_for('logout')}}">Logout</a>
+	</div>
+</body>
+</html>
