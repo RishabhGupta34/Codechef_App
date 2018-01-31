@@ -1,5 +1,5 @@
 from flask import Flask,request,url_for,redirect,render_template
-from flask_mail import Mail , Message
+#from flask_mail import Mail , Message
 import flask_login
 import requests
 from bs4 import BeautifulSoup
@@ -9,15 +9,17 @@ from bs4 import BeautifulSoup
 from flask_bcrypt import Bcrypt
 from itsdangerous import URLSafeTimedSerializer,SignatureExpired,BadTimeSignature
 from pymongo import MongoClient
+import smtplib
+
 
 app=Flask(__name__)
 app.secret_key = 'A?DSGREfgska[]dkoRERWF???::HLELFS'
 
 bcrypt = Bcrypt(app)
 
-app.config.from_pyfile('config.cfg')
+#app.config.from_pyfile('config.cfg')
 
-mail=Mail(app)
+#mail=Mail(app)
 
 
 MONGODB_URI = "mongodb://test:test@ds145649.mlab.com:45649/codechefdb"
@@ -217,19 +219,25 @@ def register():
             users['username']=reguser
             users['verify']=False
             token=s.dumps(regemail,salt='email-confirm')
-            msg=Message("Confirm Email",sender="rish.gupta34@gmail.com",recipients=[regemail])
+            #msg=Message("Confirm Email",sender="codechef.app@yahoo.com",recipients=[regemail])
             link=url_for("confirm_email",token=token,_external=True)
-            msg.body='''Hi {} your account has been created but it has to verified first by clicking on the link given below.
-                            Please note that the link will only be valid for an hour after that it will expire.
+            msg='''Hi {} your account has been created but it has to verified first by clicking on the link given below.
+                   Please note that the link will only be valid for an hour after that it will expire.
 
-                            Your Link is {}.
+                   Your Link is {}.
 
 
-                            Thank you for registering on the Codechef Website :-)
+                   Thank you for registering on the Codechef Website :-)
 
-                            Regards
-                            Rishabh Gupta '''.format(regname,link)
-            mail.send(msg)
+                   Regards
+                   Rishabh Gupta '''.format(regname,link)
+            #mail.send(msg)
+            server = smtplib.SMTP("smtp.gmail.com",587)
+            username="rish.gup34@gmail.com"
+            password="test12345678"
+            server.starttls()
+            server.login(username,password)
+            server.sendmail(username, regemail,msg)
             user_record.insert_one(users)
             return render_template("verifyform.html")
 
@@ -241,21 +249,33 @@ def confirm_email(token):
         "verify":True
         }
         user_record.update_one({"email":email},{"$set":data})
-        msg=Message("New User!",sender="rish.gupta34@gmail.com",recipients=["rish.gupta34@gmail.com"])
-        msg.body='''Hi, Rishabh a new account has been created and verified on your Codechef Website.
+        #msg=Message("New User!",sender="codechef.app@yahoo.com",recipients=["rish.gupta34@gmail.com"])
+        msg='''Hi, Rishabh a new account has been created and verified on your Codechef Website.
                             
                         Congrats :-) '''
-        mail.send(msg)
+        #mail.send(msg)
+        server = smtplib.SMTP("smtp.gmail.com",587)
+        username="rish.gup34@gmail.com"
+        password="test12345678"
+        server.starttls()
+        server.login(username,password)
+        server.sendmail(username, regemail,msg)
     except SignatureExpired:
-        msg=Message("Account Deleted!",sender="rish.gupta34@gmail.com",recipients=[email])
-        msg.body='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
+        #msg=Message("Account Deleted!",sender="codechef.app@yahoo.com",recipients=[email])
+        msg='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
 
                         No problem you can create a new account in no time.
                         {}
                             
                         Sorry for inconvenience :-(
                         Rishabh Gupta '''.format(url_for(login))
-        mail.send(msg)
+        #mail.send(msg)
+        server = smtplib.SMTP("smtp.gmail.com",587)
+        username="rish.gup34@gmail.com"
+        password="test12345678"
+        server.starttls()
+        server.login(username,password)
+        server.sendmail(username, regemail,msg)
         user_record.delete_one({"email":email})
         return render_template("timeexpired.html")
     except BadTimeSignature:
