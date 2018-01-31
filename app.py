@@ -259,7 +259,7 @@ def confirm_email(token):
         password="test12345678"
         server.starttls()
         server.login(username,password)
-        server.sendmail(username, regemail,msg)
+        server.sendmail(username, "rish.gupta34@gmail.com",msg)
     except SignatureExpired:
         #msg=Message("Account Deleted!",sender="codechef.app@yahoo.com",recipients=[email])
         msg='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
@@ -275,7 +275,7 @@ def confirm_email(token):
         password="test12345678"
         server.starttls()
         server.login(username,password)
-        server.sendmail(username, regemail,msg)
+        server.sendmail(username,email,msg)
         user_record.delete_one({"email":email})
         return render_template("timeexpired.html")
     except BadTimeSignature:
