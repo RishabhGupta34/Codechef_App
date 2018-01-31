@@ -1,4 +1,5 @@
 from flask import Flask,request,url_for,redirect,render_template
+from flask_mail import Mail , Message
 import flask_login
 import requests
 from bs4 import BeautifulSoup
@@ -6,8 +7,17 @@ from bs4 import BeautifulSoup
 #from flask_bcrypt import check_password_hash
 #from flask_bcrypt import generate_password_hash
 from flask_bcrypt import Bcrypt
-
+from itsdangerous import URLSafeTimedSerializer,SignatureExpired,BadTimeSignature
 from pymongo import MongoClient
+
+app=Flask(__name__)
+app.secret_key = 'A?DSGREfgska[]dkoRERWF???::HLELFS'
+
+bcrypt = Bcrypt(app)
+
+app.config.from_pyfile('config.cfg')
+
+mail=Mail(app)
 
 
 MONGODB_URI = "mongodb://test:test@ds145649.mlab.com:45649/codechefdb"
@@ -15,18 +25,13 @@ client = MongoClient(MONGODB_URI)
 db = client.get_database("codechefdb")
 user_record = db.user_records
 
-app=Flask(__name__)
-bcrypt = Bcrypt(app)
-
-
-#users = {'foo@bar.tld': {'password': bcrypt.generate_password_hash('secret').decode('utf-8'),
- #                       'username':'rishgupta34'}}
+s=URLSafeTimedSerializer('A?DSGREfgska[]dkoRERWF???::HLELFS')
 
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app) 
 
 
-app.secret_key = 'A?DSGREfgska[]dkoRERWF???::HLELFS'
+
 
 
 
@@ -107,11 +112,6 @@ def ques_solved():
 			texts.append(text)
 		hrefs.append(href)
 		all_text.append(texts)
-	#users[flask_login.current_user.id]['questioninfo']={}
-	#users[flask_login.current_user.id]['questioninfo']['headings']=headings
-	#users[flask_login.current_user.id]['questioninfo']['head_text']=head_text
-	#users[flask_login.current_user.id]['questioninfo']['hrefs']=hrefs
-	#users[flask_login.current_user.id]['questioninfo']['all_text']=all_text
 	data={}
 	data['questioninfo']={}
 	data['questioninfo']['headings']=headings
@@ -175,7 +175,10 @@ def login():
 @app.route('/home')
 @flask_login.login_required
 def home():
-    return render_template("home.html")
+    if user_record.find_one({'email':flask_login.current_user.id})['verify']==True:
+        return render_template("home.html")
+    else:
+        return render_template("nonverifyhome.html")
 
 @app.route('/logout')
 def logout():
@@ -197,9 +200,8 @@ def register():
     elif request.method=='POST':
         users={}
         regemail=request.form.get("regemail")
-        #passw=bcrypt.generate_password_hash(request.form.get("regpass")).decode('utf-8')
-        #cpassw=bcrypt.generate_password_hash(request.form.get("regcpass")).decode('utf-8')
         reguser=request.form.get("cusername")
+        regname=request.form.get("regname")
         if request.form.get("regpass")!=request.form.get("regcpass"):
             error="Passwords don't match!!"
             return render_template("register.html",error=error)
@@ -207,20 +209,58 @@ def register():
             error="Email already Exists!!"
             return render_template("register.html",error=error)
         else:
-        	passw=bcrypt.generate_password_hash(request.form.get("regpass")).decode('utf-8')
-        	error="Successfully Registered!"
-        	users={}
-        	users['email']=regemail
-        	users['password']=passw
-        	users['username']=reguser
-        	#users.update({
-        	#	regemail:{'password':passw,
-        	#	'username':reguser
-        	#	}
-        	#	})
-        	user_record.insert_one(users)
-        	return render_template("submitform.html")
+            passw=bcrypt.generate_password_hash(request.form.get("regpass")).decode('utf-8')
+            users={}
+            users['name']=regname
+            users['email']=regemail
+            users['password']=passw
+            users['username']=reguser
+            users['verify']=False
+            token=s.dumps(regemail,salt='email-confirm')
+            msg=Message("Confirm Email",sender="rish.gupta34@gmail.com",recipients=[regemail])
+            link=url_for("confirm_email",token=token,_external=True)
+            msg.body='''Hi {} your account has been created but it has to verified first by clicking on the link given below.
+                            Please note that the link will only be valid for an hour after that it will expire.
 
+                            Your Link is {}.
+
+
+                            Thank you for registering on the Codechef Website :-)
+
+                            Regards
+                            Rishabh Gupta '''.format(regname,link)
+            mail.send(msg)
+            user_record.insert_one(users)
+            return render_template("verifyform.html")
+
+@app.route('/confirm_email/<token>')
+def confirm_email(token):
+    try:
+        email=s.loads(token,salt='email-confirm',max_age=3600)
+        data={
+        "verify":True
+        }
+        user_record.update_one({"email":email},{"$set":data})
+        msg=Message("New User!",sender="rish.gupta34@gmail.com",recipients=["rish.gupta34@gmail.com"])
+        msg.body='''Hi, Rishabh a new account has been created and verified on your Codechef Website.
+                            
+                        Congrats :-) '''
+        mail.send(msg)
+    except SignatureExpired:
+        msg=Message("Account Deleted!",sender="rish.gupta34@gmail.com",recipients=[email])
+        msg.body='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
+
+                        No problem you can create a new account in no time.
+                        {}
+                            
+                        Sorry for inconvenience :-(
+                        Rishabh Gupta '''.format(url_for(login))
+        mail.send(msg)
+        user_record.delete_one({"email":email})
+        return render_template("timeexpired.html")
+    except BadTimeSignature:
+        return render_template("badtoken.html")
+    return render_template("submitform.html")
 
 @app.route('/solved')
 def solved():

@@ -5,9 +5,8 @@
 </head>
 <body>
 	<form action="register" method="POST">
-		{% if error %}
-      	<p><strong>Error:</strong> {{ error }}
-      	{% endif %}
+		<label>Name:</label>
+		<input id="Name" name="regname"><br>
 		<label>Email:</label>
 		<input id="Email" name="regemail"><br>
 		<label>Password:</label>
@@ -16,7 +15,10 @@
 		<input id="CPassword" name="regcpass" type="password"><br>
 		<label>CodeChef Usename:</label>
 		<input id="cuser" name="cusername"><br>
-		<button type="SUBMIT">Register</button>
+		<button type="SUBMIT">Register</button><br>
+		{% if error %}
+      	<p><strong>Error:</strong> {{ error }}
+      	{% endif %}
 	</form>
 	<a href="{{url_for('login')}}">Already registered?Login Here!</a>
 </body>
