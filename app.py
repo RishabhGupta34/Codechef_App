@@ -292,6 +292,9 @@ def solved():
 def rating():
     return render_template("rating.html",user_rating=ratinginfo())
 
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
 
 if __name__=="__main__":
 	app.run(port=8000,debug=True)
