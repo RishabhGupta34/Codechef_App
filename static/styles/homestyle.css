@@ -28,7 +28,7 @@ html,body
 /*	max-width: 500px;
 */	margin: 100px;
 }
-#a1,#a2,#a3,#a4
+#a1,#a2,#a3,#a4,#a5
 {
 	font-size: 1.3em;
 	margin-bottom: 0 auto;
@@ -42,10 +42,10 @@ h2
 	color: black;
 	text-align: center;
 	font-family: 'Permanent Marker', cursive;
-	font-size: 100px;
+	font-size: 75px;
 }
 
-#a1:hover,#a2:hover,#a3:hover,#a4:hover
+#a1:hover,#a2:hover,#a3:hover,#a4:hover,#a5:hover
 {
 	color: rgb(153,255,51);
 }
