@@ -5,19 +5,19 @@
 </head>
 <body>
 	<form action="register" method="POST">
-		<label>Name:</label>
-		<input id="Name" name="regname"><br>
-		<label>Email:</label>
-		<input id="Email" name="regemail"><br>
-		<label>Password:</label>
-		<input id="Password" name="regpass" type="password"><br>
-		<label>Confirm Password:</label>
-		<input id="CPassword" name="regcpass" type="password"><br>
-		<label>CodeChef Usename:</label>
-		<input id="cuser" name="cusername"><br>
+		<label>Name:
+		<input id="Name" name="regname" type="text" placeholder="Name" required></label><br>
+		<label>Email:
+		<input id="Email" name="regemail" type="Email" placeholder="Email" required></label><br>
+		<label>Password:
+		<input id="Password" name="regpass" type="password" placeholder="Password" required></label><br>
+		<label>Confirm Password:
+		<input id="CPassword" name="regcpass" type="password" placeholder="Confirm Password" required></label><br>
+		<label>CodeChef Usename:
+		<input id="cuser" name="cusername" type="text" placeholder="CodeChef Username" required></label><br>
 		<button type="SUBMIT">Register</button><br>
 		{% if error %}
-      	<p><strong>Error:</strong> {{ error }}
+      	<h2><strong><em>Error:</em></strong></h2><h3><em>{{ error }}</em></h3><br>
       	{% endif %}
 	</form>
 	<a href="{{url_for('login')}}">Already registered?Login Here!</a>

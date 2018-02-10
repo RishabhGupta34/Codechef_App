@@ -174,11 +174,15 @@ def login():
     return 'Bad login'
 
 
+@app.route('/')
+def startpage():
+    return render_template("index.html")
+
 @app.route('/home')
 @flask_login.login_required
 def home():
     if user_record.find_one({'email':flask_login.current_user.id})['verify']==True:
-        return render_template("home.html")
+        return render_template("home.html",name=user_record.find_one({'email':flask_login.current_user.id})['name'])
     else:
         return render_template("nonverifyhome.html")
 

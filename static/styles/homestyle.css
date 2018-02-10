@@ -1,0 +1,51 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+.intro
+{
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	display: table;
+	top:0;
+	background: url(http://hdwallpaper2013.com/wp-content/uploads/2013/02/Cool-Designs-Wallpapers-for-Background-HD-Wallpaper-1080x607.jpg) no-repeat 50% 50%;
+	background-size: cover;
+}
+.inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+/*	vertical-align: middle;
+*/}
+.content
+{
+/*	padding: 10% 0% 10% 0%;
+/*	max-width: 500px;
+*/	margin: 100px;
+}
+#a1,#a2,#a3,#a4
+{
+	font-size: 1.3em;
+	margin-bottom: 0 auto;
+	color:rgb(127,0,255);
+	text-align: left;
+	font-family: 'Berkshire Swash', cursive;
+
+}
+h2
+{
+	color: black;
+	text-align: center;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 100px;
+}
+
+#a1:hover,#a2:hover,#a3:hover,#a4:hover
+{
+	color: rgb(153,255,51);
+}

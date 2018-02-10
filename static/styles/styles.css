@@ -1,0 +1,52 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Indie Flower', cursive;
+
+}
+.intro
+{
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	background: url(https://www.planwallpaper.com/static/images/494303a2cb59b5103ed095867f3d5dbd.jpg) no-repeat 50% 50%;
+	display: table;
+	top:0;
+	background-size: cover;
+}
+.intro .inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.content
+{
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+h1
+{
+	color: #F9F3F4;
+	font-size: 500%;
+}
+.btn
+{
+	border:3px solid #036A81;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 9px;
+	color: #036A81;
+	font-size: 150%;
+	padding: 10px;
+}
+.btn:hover
+{
+	border: 3px solid #fff;
+	color: #fff;
+}

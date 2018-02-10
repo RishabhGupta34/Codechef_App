@@ -1,0 +1,19 @@
+*{
+	background: url("download.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: blur(5px);
+/*	position: fixed;
+*/}
+#s
+{
+	text-align: center;
+	color: rgba(124,252,0,1);
+    font-size: 20px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+*
+{
+	font-family: 'Kavoon', cursive;
+}
