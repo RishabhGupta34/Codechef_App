@@ -37,7 +37,7 @@ html,body
 	color:rgb(127,0,255);
 	text-align: left;
 	font-family: 'Berkshire Swash', cursive;
-
+	margin:30px;
 }
 h2
 {
@@ -80,4 +80,30 @@ form
 .l1:hover
 {
 	color: #b83dba;
+}
+input
+{
+  	-moz-border-radius: 15px;
+ 	border-radius: 15px;
+    border:solid 1px black;
+    padding:5px;
+    background: url(http://bgfons.com/uploads/rainbow/rainbow_texture679.jpg)
+}
+::placeholder 
+{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; /* Firefox */
+    font-family:'Permanent Marker', cursive;
+}
+
+:-ms-input-placeholder 
+{ /* Internet Explorer 10-11 */
+    color: red;
+    font-family:'Permanent Marker', cursive;
+}
+
+::-ms-input-placeholder 
+{ /* Microsoft Edge */
+    color: red;
+    font-family:'Permanent Marker', cursive;
 }

@@ -1,19 +1,69 @@
-*{
-	background: url("download.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	filter: blur(5px);
-/*	position: fixed;
-*/}
-#s
+html,body
 {
-	text-align: center;
-	color: rgba(124,252,0,1);
-    font-size: 20px;
-    text-transform: capitalize;
-    font-style: italic;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
 }
-*
+.intro
 {
-	font-family: 'Kavoon', cursive;
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	display: table;
+	top:0;
+	background: url(http://memecrunch.com/meme/1F3YV/is-there-a-problem-here/image.jpg) no-repeat 50% 50%;
+	background-size: 100% 100% ;
+}
+.inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+/*	vertical-align: middle;
+*/}
+/*.content
+{
+	padding: 10% 0% 10% 0%;
+/*	max-width: 500px;
+	margin: 100px;
+}*/
+#a1
+{
+	font-size: 1.3em;
+	margin-bottom: 0 auto;
+	color:rgb(127,0,255);
+	text-align: left;
+	font-family: 'Berkshire Swash', cursive;
+
+}
+#a2
+{
+	font-size: 1.3em;
+	margin-bottom: 0 auto;
+	color:rgb(127,0,255);
+	text-align:right;
+	font-family: 'Berkshire Swash', cursive;
+
+}
+p
+{
+	color: rgb(0,153,221);
+	text-align: center;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 3em;
+}
+#span1
+{
+	font-size: 1.2em;
+	color: #b83dba;
+}
+h3:hover
+{
+	color: #b83dba;
+}
+
+#a1:hover,#a2:hover
+{
+	color: rgb(153,255,51);
 }

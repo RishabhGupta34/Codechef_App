@@ -6,10 +6,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Kavoon" rel="stylesheet">
 </head>
 <body>
-	<div id="s">
-		<p>For reporting any issues or giving feedback please drop a mail at <h4>"rish.gupta34@gmail.com"</h4>.<br>The developer will contact you as soon as possible.</p><br>
-		<a href="{{url_for('home')}}">Home</a>
-		<a href="{{url_for('logout')}}">Logout</a>
-	</div>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				<p>For reporting any issues or giving feedback please drop a mail at <br><span id="span1">rish.gupta34@gmail.com</span><br>The developer will contact you as soon as possible</p><br>
+				<a href="{{url_for('home')}}" id="a1">Home</a>
+				<a href="{{url_for('logout')}}" id="a2">Logout</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
