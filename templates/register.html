@@ -2,24 +2,35 @@
 <html>
 <head>
 	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/registerstyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </head>
 <body>
-	<form action="register" method="POST">
-		<label>Name:
-		<input id="Name" name="regname" type="text" placeholder="Name" required></label><br>
-		<label>Email:
-		<input id="Email" name="regemail" type="Email" placeholder="Email" required></label><br>
-		<label>Password:
-		<input id="Password" name="regpass" type="password" placeholder="Password" required></label><br>
-		<label>Confirm Password:
-		<input id="CPassword" name="regcpass" type="password" placeholder="Confirm Password" required></label><br>
-		<label>CodeChef Usename:
-		<input id="cuser" name="cusername" type="text" placeholder="CodeChef Username" required></label><br>
-		<button type="SUBMIT">Register</button><br>
-		{% if error %}
-      	<h2><strong><em>Error:</em></strong></h2><h3><em>{{ error }}</em></h3><br>
-      	{% endif %}
-	</form>
-	<a href="{{url_for('login')}}">Already registered?Login Here!</a>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				<form action="register" method="POST">
+					<label for="Name" class="l1">Name:</label>
+					<input id="Name" name="regname" type="text" placeholder="Name" class="l1" required><br>
+					<label for="Email" class="l1">Email:</label>
+					<input id="Email" name="regemail" type="Email" placeholder="Email" class="l1" required><br>
+					<label for="Password" class="l1">Password:</label>
+					<input id="Password" name="regpass" type="password" class="l1" placeholder="Password" required><br>
+					<label for="CPassword" class="l1">Confirm Password:</label>
+					<input id="CPassword" name="regcpass" type="password" class="l1" placeholder="Confirm Password" required><br>
+					<label for="cuser" class="l1">CodeChef Usename:</label>
+					<input id="cuser" name="cusername" type="text" class="l1" placeholder="CodeChef Username" required><br>
+					<button type="SUBMIT" class="btn">Register</button><br>
+					{% if error %}
+      					<h2 class="l1">Error: {{ error }}</h2><br>
+      				{% endif %}
+				</form>
+				<a href="{{url_for('login')}}" id="a1">Already registered?Login Here!</a>
+			</div>
+		</div>
+	</section>
+	
 </body>
 </html>	

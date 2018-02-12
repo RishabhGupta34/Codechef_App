@@ -2,11 +2,18 @@
 <html>
 <head>
 	<title>Logout</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/logoutstyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
-		<h3>The user was Logged out successfully</h3><br>
-		<a href="{{url_for('login')}}">Login Again!</a>
-	</form>
+	<section class="intro">
+		<div class="inner">
+			<div  class="content">
+				<h3>You were Logged out successfully!!</h3><br>
+				<a href="{{url_for('login')}}" id="a1">Login Again!</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
