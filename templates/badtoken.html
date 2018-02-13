@@ -2,12 +2,20 @@
 <html>
 <head>
 	<title>Invalid URL</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/badtokenstyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
-		<h3>Sorry the URL entered was not the same as provided in the email.<br>Please check the URL again!</h3><br>
-		<a href="{{url_for('login')}}">Login</a>
-		<a href="{{url_for('register')}}">Register</a>
-	</form>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				<span>Please check the URL again!</span><br>
+				<a href="{{url_for('login')}}" id="a1">Login</a>
+				<a href="{{url_for('startpage')}}" id="a2">Home</a>
+				<a href="{{url_for('register')}}" id="a3">Register</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

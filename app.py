@@ -265,22 +265,22 @@ def confirm_email(token):
         server.login(username,password)
         server.sendmail(username, "rish.gupta34@gmail.com",msg)
     except SignatureExpired:
-        #msg=Message("Account Deleted!",sender="codechef.app@yahoo.com",recipients=[email])
-        msg='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
+        # #msg=Message("Account Deleted!",sender="codechef.app@yahoo.com",recipients=[email])
+        # msg='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
 
-                        No problem you can create a new account in no time.
-                        {}
+        #                 No problem you can create a new account in no time.
+        #                 {}
                             
-                        Sorry for inconvenience :-(
-                        Rishabh Gupta '''.format(url_for(login))
-        #mail.send(msg)
-        server = smtplib.SMTP("smtp.gmail.com",587)
-        username="rish.gup34@gmail.com"
-        password="test12345678"
-        server.starttls()
-        server.login(username,password)
-        server.sendmail(username,email,msg)
-        user_record.delete_one({"email":email})
+        #                 Sorry for inconvenience :-(
+        #                 Rishabh Gupta '''.format(url_for(login))
+        # #mail.send(msg)
+        # server = smtplib.SMTP("smtp.gmail.com",587)
+        # username="rish.gup34@gmail.com"
+        # password="test12345678"
+        # server.starttls()
+        # server.login(username,password)
+        # server.sendmail(username,email,msg)
+        # user_record.delete_one({"email":email})
         return render_template("timeexpired.html")
     except BadTimeSignature:
         return render_template("badtoken.html")

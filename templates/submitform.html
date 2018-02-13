@@ -1,10 +1,18 @@
 <html>
 	<head>
 		<title>Verification Completed</title>
+		<link rel="stylesheet" type="text/css" href="../static/styles/submitformstyle.css">
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Congrats the email has been verified.<br>You can now login to access your account.</h1>
-		<a href="{{url_for('login')}}">Login Here!</a>
-
+		<section class="intro">
+			<div class="inner">
+				<div class="content">
+					<span>Congrats the email has been verified.<br>You can now login to access your account.</span><br>
+					<a href="{{url_for('login')}}" id="a1">Login Here!</a>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

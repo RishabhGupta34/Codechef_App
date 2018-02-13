@@ -1,0 +1,57 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Berkshire Swash', cursive;
+}
+.intro
+{
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	display: table;
+	top:0;
+	background:url(https://i.pinimg.com/736x/c1/57/fc/c157fc8e319f6e0619b970af03e5e900--sean-opry-wilderness.jpg) no-repeat 50% 50%;
+	background-size: 100% 100% ;
+}
+.inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+#a1
+{
+	font-size: 1.4em;
+	margin-left:10%;
+	color:rgb(127,0,255);
+}
+#a2
+{
+	font-size: 1.4em;	
+	margin-left:30%;
+	color:rgb(127,0,255);
+}
+#a3
+{
+	font-size: 1.4em;	
+	margin-left:30%;
+	margin-right: 10%;	
+	color:rgb(127,0,255);
+}
+span
+{
+	color: #3d54ba;
+	font-family: 'Sedgwick Ave Display', cursive;
+	text-align: center;
+	font-size: 3.5em;
+	margin-top: 30%;
+	margin-left: 25%;
+}
+#a1:hover,#a2:hover,#a3:hover
+{
+	color: #0bee69;
+}

@@ -2,12 +2,17 @@
 <html>
 <head>
 	<title>Time Limit Expired</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/timexpiredstyle.css">
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
-		<h3>Sorry the time limit for verification of your account has expired.<br>Please register again!</h3><br>
-		<a href="{{url_for('login')}}">Login</a>
-		<a href="{{url_for('register')}}">Register</a>
-	</form>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				<h3>Sorry the time limit for verification of your account has expired.<br>Please register again!</h3><br>
+				<a href="{{url_for('login')}}">Login</a>
+				<a href="{{url_for('register')}}">Register</a>
+				</div>
+		</div>
+	</section>
 </body>
 </html>

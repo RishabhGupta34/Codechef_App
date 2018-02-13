@@ -4,6 +4,7 @@ html,body
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	font-family: 'Slabo 27px', serif;
 }
 .intro
 {
@@ -12,7 +13,7 @@ html,body
 	margin: auto; 
 	display: table;
 	top:0;
-	background: url(http://memecrunch.com/meme/1F3YV/is-there-a-problem-here/image.jpg) no-repeat 50% 50%;
+	background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Desktop-Cool-HD-Background-Photos-PIC-WPD0010435.jpg) no-repeat 50% 50%;
 	background-size: 100% 100% ;
 }
 .inner
@@ -33,24 +34,24 @@ html,body
 	font-size: 1.3em;
 	margin-bottom: 0 auto;
 	color:rgb(127,0,255);
-	text-align: left;
-	font-family: 'Berkshire Swash', cursive;
+	margin-left: 10%;
+/*	text-align: left;
+*/	font-family: 'Berkshire Swash', cursive;
+	
 
 }
 #a2
 {
 	font-size: 1.3em;
 	margin-bottom: 0 auto;
-	color:rgb(127,0,255);
-	text-align:right;
+	margin-left: 70%;
+    color:rgb(127,0,255);
 	font-family: 'Berkshire Swash', cursive;
-
 }
 p
 {
-	color: rgb(0,153,221);
+	color: #3d54ba;
 	text-align: center;
-	font-family: 'Permanent Marker', cursive;
 	font-size: 3em;
 }
 #span1
@@ -65,5 +66,9 @@ h3:hover
 
 #a1:hover,#a2:hover
 {
-	color: rgb(153,255,51);
+	color: #0bee69;
+}
+#span1:hover
+{
+	color: black;
 }
