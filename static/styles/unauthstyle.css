@@ -30,13 +30,7 @@ html,body
 #a1
 {
 	font-size: 1.5em;
-	margin-left:-0%;
-	color:rgb(127,0,255);
-}
-#a2
-{
-	font-size: 1.5em;	
-	margin-left:80%;
+	margin-top: 100px;
 	color:rgb(127,0,255);
 }
 span
@@ -45,8 +39,9 @@ span
 	font-family: 'Sedgwick Ave Display', cursive;
 	text-align: center;
 	font-size: 3.2em;
+	margin-bottom: 100px;
 }
-#a1:hover,#a2:hover
+#a1:hover
 {
 	color: #0bee69;
 }

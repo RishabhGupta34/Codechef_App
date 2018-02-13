@@ -1,0 +1,67 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Boogaloo', cursive;
+}
+.intro
+{
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	display: table;
+	top:0;
+	background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(http://markinternational.info/data/out/242/220809685-hd-wallpapers-1080p-abstract.jpg) no-repeat 50% 50%;
+	background-size: 100% 100% ;
+	vertical-align: middle;
+}
+.inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.content
+{
+	text-align: center;
+}
+#a1
+{
+	font-size: 1.3em;
+	margin-top:10% ;
+	color:rgb(127,0,255);
+	font-family: 'Berkshire Swash', cursive;
+}
+#a2
+{
+	font-size: 1.3em;
+	margin-top:10% ;
+	margin-left: 70% ;
+	color:rgb(127,0,255);
+	font-family: 'Berkshire Swash', cursive;
+}
+span
+{
+	color: #f41f1f;
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 10%;
+}
+.s1
+{
+	color: black;
+	text-align: center;
+	margin-bottom: 10%;
+	font-size: 1em;
+}
+.s1:hover
+{
+	color: #0bee69;
+}
+#a1:hover,#a2:hover
+{
+	color: rgb(153,255,51);
+}

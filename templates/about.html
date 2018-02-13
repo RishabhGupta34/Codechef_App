@@ -2,24 +2,27 @@
 <html>
 <head>
 	<title>About</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/aboutstyle.css">	
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
-		<h3>Name:{{abt['Name']}}</h3>
-		<h3>Username:{{abt['Username:']}}</h3>
-		<h3>State:{{abt['State:']}}</h3>
-		<h3>Institution:{{abt['Institution:']}}</h3>
-		<h3>Student/Professional:{{abt['Student/Professional:']}}</h3>
-		<h3>Country:{{abt['Country:']}}</h3>
-		<h3>City:{{abt['City:']}}</h3>
-		<h3>Global Rank:{{abt['Global Rank:']}}</h3>
-		<h3>Country Rank:{{abt['Country Rank:']}}</h3>
-	</div>
-	<div align="left">
-		<a href="{{url_for('home')}}">Home</a>
-	</div>
-	<div align="right">
-		<a href="{{url_for('logout')}}">Logout</a>
-	</div>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				<span>Name:<span class="s1">{{abt['Name']}}</span></span><br>
+				<span>Username:<span class="s1">{{abt['Username:']}}</span></span><br>
+				<span>Student/Professional:<span class="s1">{{abt['Student/Professional:']}}</span></span><br>
+				<span>Institution:<span class="s1">{{abt['Institution:']}}</span></span><br>
+				<span>City:<span class="s1">{{abt['City:']}}</span></span><br>
+				<span>State:<span class="s1">{{abt['State:']}}</span></span><br>				
+				<span>Country:<span class="s1">{{abt['Country:']}}</span></span><br>
+				<span>Country Rank:<span class="s1">{{abt['Country Rank:']}}</span></span><br>
+				<span>Global Rank:<span class="s1">{{abt['Global Rank:']}}</span></span><br>
+				<a href="{{url_for('home')}}" id="a1">Home</a>
+				<a href="{{url_for('logout')}}" id="a2">Logout</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

@@ -2,16 +2,19 @@
 <html>
 <head>
 	<title>Time Limit Expired</title>
-	<link rel="stylesheet" type="text/css" href="../static/styles/timexpiredstyle.css">
+	<link rel="stylesheet" type="text/css" href="../static/styles/timexpiredstyle.css">	
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
+
 </head>
 <body>
 	<section class="intro">
 		<div class="inner">
 			<div class="content">
-				<h3>Sorry the time limit for verification of your account has expired.<br>Please register again!</h3><br>
-				<a href="{{url_for('login')}}">Login</a>
-				<a href="{{url_for('register')}}">Register</a>
-				</div>
+				<span>Sorry the time limit for verification of your account has expired.<br>Please register again!</span><br>
+				<a href="{{url_for('login')}}" id="a1">Login</a>
+				<a href="{{url_for('register')}}" id="a2">Register</a>
+			</div>
 		</div>
 	</section>
 </body>

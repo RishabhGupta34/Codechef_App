@@ -2,24 +2,27 @@
 <html>
 <head>
 	<title>Questions Solved</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/solvedstyle.css">	
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
-		{% for i in range(2) %}
-			<h1>{{headings[i]}}</h1>
-			{% for j in range(head_text[i]|length) %}
-				<h2>{{head_text[i][j]}}</h2>
-				{% for k in range(all_text[i][j]|length) %}
-					<a href={{hrefs[i][j][k]}}>{{all_text[i][j][k]}}</a>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				{% for i in range(2) %}
+					<span class="s1">{{headings[i]}}</span><br>
+					{% for j in range(head_text[i]|length) %}
+						<span class="s2">{{head_text[i][j]}}</span><br>
+						{% for k in range(all_text[i][j]|length) %}
+							<a href={{hrefs[i][j][k]}} class="a1">{{all_text[i][j][k]}}</a>
+						{% endfor %}<br>
+					{% endfor %}
 				{% endfor %}
-			{% endfor %}
-		{% endfor %}
-	</div>
-	<div align="left">
-		<a href="{{url_for('home')}}">Home</a>
-	</div>
-	<div align="right">
-		<a href="{{url_for('logout')}}">Logout</a>
-	</div>
+				<a href="{{url_for('home')}}" class="a1">Home</a>
+				<a href="{{url_for('logout')}}" class="a1">Logout</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

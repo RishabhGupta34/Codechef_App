@@ -2,11 +2,18 @@
 <html>
 <head>
 	<title>Unauthorized Access</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/timexpiredstyle.css">	
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
-		<h3>This is an Unauthorized Access.Please Login first to access the webpage</h3><br>
-		<a href="{{url_for('login')}}">Login</a>
-	</form>
+	<section class="intro">
+		<div class="inner">
+			<div class="content">
+				<span>This is an Unauthorized Access.Please login to access the webpage</span><br>
+				<a href="{{url_for('login')}}" id="a1">Login</a>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

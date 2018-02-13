@@ -13,7 +13,7 @@ html,body
 	margin: auto; 
 	display: table;
 	top:0;
-	background:url(http://thewallpaper.co/wp-content/uploads/2016/10/1080p-PC-Backgrounds-hd-desktop-wallpapers-cool-images-hd-download-windows-colourfull-display-lovely-wallpapers-1920x1080.jpg) no-repeat 50% 50%;
+	background:url(http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/07/Abstract-Wallpapers-HD-1080p-2.jpg) no-repeat 50% 50%;
 	background-size: 100% 100% ;
 }
 .inner
@@ -30,23 +30,18 @@ html,body
 #a1
 {
 	font-size: 1.5em;
-	margin-left:-0%;
-	color:rgb(127,0,255);
-}
-#a2
-{
-	font-size: 1.5em;	
-	margin-left:80%;
+	margin-top: 100px;
 	color:rgb(127,0,255);
 }
 span
 {
-	color: #d422d7;
+	color: #0bee69;
 	font-family: 'Sedgwick Ave Display', cursive;
 	text-align: center;
-	font-size: 3.2em;
+	font-size: 3.4em;
+	margin-bottom: 100px;
 }
-#a1:hover,#a2:hover
+#a1:hover
 {
 	color: #0bee69;
 }
