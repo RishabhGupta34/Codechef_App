@@ -170,8 +170,8 @@ def login():
         user.id = email
         flask_login.login_user(user)
         return redirect(url_for('home'))
-
-    return 'Bad login'
+    error="The username or password entered is incorrect"
+    return render_template("login.html",error=error)
 
 
 @app.route('/')

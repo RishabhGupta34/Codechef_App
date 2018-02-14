@@ -13,7 +13,7 @@ html,body
 	margin: auto; 
 	display: table;
 	top:0;
-	background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(http://www.4usky.com/data/out/1/163982021-abstract-wallpapers.jpg) no-repeat 50% 50%;
+	background:url(http://www.misucell.com/data/out/4/IMG_33228.png) no-repeat fixed 50% 50%;
 	background-size: 100% 100% ;
 	vertical-align: middle;
 }
@@ -30,15 +30,15 @@ html,body
 }
 .a1
 {
-	font-size: 1.4em;/*
-	margin-top:10% ;*/
+	font-size: 1.4em;
+	margin-right:1% ;
 	color:rgb(127,0,255);
 	font-family: 'Berkshire Swash', cursive;
 }
 .s1
 {
 	color: #f41f1f;
-	font-size: 4em;
+	font-size: 3.4em;
 }
 .s2
 {
@@ -48,4 +48,17 @@ html,body
 .a1:hover
 {
 	color: rgb(153,255,51);
+}
+#logout
+{
+	margin-left: 60%;
+	margin-right: 10%;
+}
+#home
+{
+	margin-left: 10%;
+}
+.content2
+{
+	margin-top: 2%;	
 }

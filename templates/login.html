@@ -4,19 +4,23 @@
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="../static/styles/loginstyle.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 </head>
 <body>
 	<section class="outersec">
 	<div class="outer">
 		<div class="inner">
-	<form action="login" method="POST">
-		<label for="Email" class="l1">Email:</label>
-		<input id="Email" name="loginemail" placeholder="Email" class="l1"><br>
-		<label for="Password" class="l1">Password:</label>
-		<input id="Password" name="loginpass" type="password" placeholder="Password" class="l1"><br>
-		<button type="SUBMIT" class="btn">Log In</button>
-	</form>
-	<a href="{{url_for('register')}}"  class="l1" id="new">New User?Register Here!</a>
+			{% if error %}
+      			<span class="error">Error: {{ error }}</span><br>
+      		{% endif %}
+			<form action="login" method="POST">
+				<label for="Email" class="l1">Email:</label>
+				<input id="Email" name="loginemail" placeholder="Email" class="l1"><br>
+				<label for="Password" class="l1">Password:</label>
+				<input id="Password" name="loginpass" type="password" placeholder="Password" class="l1"><br>
+				<button type="SUBMIT" class="btn">Log In</button>
+			</form>
+			<a href="{{url_for('register')}}"  class="l1" id="new">New User?Register Here!</a>
 	</div></div></section>
 </body>
 </html>	

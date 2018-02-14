@@ -1,10 +1,19 @@
 <html>
 	<head>
 		<title>Verification Error</title>
+		<link rel="stylesheet" type="text/css" href="../static/styles/nonverifystyle.css">	
+		<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
 	</head>
 	<body>
-		<h1>It seems like you have not yet verified your account.<br>Please verify your account from the link sent to your email.</h1><br>
-		<a href="{{url_for('login')}}">Login Here!</a>
 
+		<section class="intro">
+			<div class="inner">
+				<div class="content">
+					<span>It seems like you have not yet verified your account.<br>Please verify your account from the link sent to your email.</span><br>
+					<a href="{{url_for('login')}}" id="a1">Login Here!</a>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

@@ -10,6 +10,8 @@
 	<section class="intro">
 		<div class="inner">
 			<div class="content">
+				<div class="content2"><a href="{{url_for('home')}}" class="a1" id="home">Home</a>
+				<a href="{{url_for('logout')}}" class="a1" id="logout">Logout</a></div><br>
 				{% for i in range(2) %}
 					<span class="s1">{{headings[i]}}</span><br>
 					{% for j in range(head_text[i]|length) %}
@@ -19,8 +21,6 @@
 						{% endfor %}<br>
 					{% endfor %}
 				{% endfor %}
-				<a href="{{url_for('home')}}" class="a1">Home</a>
-				<a href="{{url_for('logout')}}" class="a1">Logout</a>
 			</div>
 		</div>
 	</section>

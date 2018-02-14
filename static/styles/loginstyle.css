@@ -60,6 +60,12 @@ html,body
 {
 	color: #b83dba;
 }
+.error
+{	
+	color: rgb(127,0,255);
+	font-size: 1.7em;
+	font-family: 'Berkshire Swash', cursive;
+}
 input
 {
   	-moz-border-radius: 15px;

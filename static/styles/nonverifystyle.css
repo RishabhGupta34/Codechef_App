@@ -1,0 +1,47 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Berkshire Swash', cursive;
+}
+.intro
+{
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	display: table;
+	top:0;
+	background:url(https://wallpaperscraft.com/image/red_black_abstract_496_1920x1080.jpg) no-repeat 50% 50%;
+	background-size: 100% 100% ;
+}
+.inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.content
+{
+	text-align: center;
+}
+#a1
+{
+	font-size: 1.5em;
+	margin-top: 100px;
+	color:rgb(127,0,255);
+}
+span
+{
+	color: #036A81;
+	font-family: 'Sedgwick Ave Display', cursive;
+	text-align: center;
+	font-size: 2.2em;
+	margin-bottom: 100px;
+}
+#a1:hover
+{
+	color: #0bee69;
+}
