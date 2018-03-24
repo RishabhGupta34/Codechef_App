@@ -2,9 +2,26 @@
 <html>
 <head>
 	<title>Rating</title>
+	<link rel="stylesheet" type="text/css" href="../static/styles/ratingstyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
+
 </head>
 <body>
-	<div align="center" style="color:#0000FF">
+
+	<section class="intro">
+		<div class="inner"><!-- align="center" -->
+			<div class="content" >
+
+	<div align="left">
+		<a href="{{url_for('home')}}" id="a3">Home</a>
+	</div>
+	<div align="right">
+		<a href="{{url_for('logout')}}" id="a4">Logout</a>
+	</div>
+	<h2>Your ratings!</h2>
+	<div class="tablecontent" align="center">
 		<table border=1>
 			<tbody>
 				<tr>
@@ -24,11 +41,8 @@
 			</tbody>
 		</table>
 	</div>
-	<div align="left">
-		<a href="{{url_for('home')}}">Home</a>
 	</div>
-	<div align="right">
-		<a href="{{url_for('logout')}}">Logout</a>
-	</div>
+		</div>
+	</section>
 </body>
 </html>

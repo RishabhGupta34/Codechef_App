@@ -1,0 +1,58 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+.intro
+{
+	height: 100%;
+	width: 100%;
+	margin: auto; 
+	display: table;
+	top:0;
+	background: url(https://wallpaperscraft.com/image/surface_network_light_background_texture_50497_1920x1200.jpg) no-repeat 50% 50%;
+	background-size: cover;
+}
+.inner
+{
+	max-width: none;
+	width: 100%;
+	display: table-cell;
+/*	vertical-align: middle;
+*/}
+.content
+{
+/*	padding: 10% 0% 10% 0%;
+/*	max-width: 500px;
+*/	margin: 100px;
+}
+#a3,#a4
+{
+	font-size: 1.3em;
+	margin-bottom: 0 auto;
+	color:rgb(127,0,255);
+	text-align: left;
+	font-family: 'Berkshire Swash', cursive;
+
+}
+h2
+{
+	color: #FF4136;
+	text-align: center;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2.4em;
+}
+
+.tablecontent
+{
+	color:  #FF851B;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 1.5em;
+}
+
+#a3:hover,#a4:hover
+{
+	color: rgb(153,255,51);
+}
