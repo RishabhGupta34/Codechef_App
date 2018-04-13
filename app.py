@@ -13,7 +13,7 @@ import smtplib
 
 
 app=Flask(__name__)
-app.secret_key = 'A?DSGREfgska[]dkoRERWF???::HLELFS'
+app.secret_key = 'secret_key_of_the_app'
 
 bcrypt = Bcrypt(app)
 
@@ -22,12 +22,12 @@ bcrypt = Bcrypt(app)
 #mail=Mail(app)
 
 
-MONGODB_URI = "mongodb://test:test@ds145649.mlab.com:45649/codechefdb"
+MONGODB_URI = "mongodb://username:password@ds145649.mlab.com:45649/codechefdb"
 client = MongoClient(MONGODB_URI)
 db = client.get_database("codechefdb")
 user_record = db.user_records
 
-s=URLSafeTimedSerializer('A?DSGREfgska[]dkoRERWF???::HLELFS')
+s=URLSafeTimedSerializer('secret_key_of_the_app')
 
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app) 
@@ -223,7 +223,6 @@ def register():
             users['username']=reguser
             users['verify']=False
             token=s.dumps(regemail,salt='email-confirm')
-            #msg=Message("Confirm Email",sender="codechef.app@yahoo.com",recipients=[regemail])
             link=url_for("confirm_email",token=token,_external=True)
             msg='''Hi {} your account has been created but it has to verified first by clicking on the link given below.
                    Please note that the link will only be valid for an hour after that it will expire.
@@ -237,8 +236,8 @@ def register():
                    Rishabh Gupta '''.format(regname,link)
             #mail.send(msg)
             server = smtplib.SMTP("smtp.gmail.com",587)
-            username="rish.gup34@gmail.com"
-            password="test12345678"
+            username="email_sender"
+            password="password_sender_email"
             server.starttls()
             server.login(username,password)
             server.sendmail(username, regemail,msg)
@@ -253,19 +252,17 @@ def confirm_email(token):
         "verify":True
         }
         user_record.update_one({"email":email},{"$set":data})
-        #msg=Message("New User!",sender="codechef.app@yahoo.com",recipients=["rish.gupta34@gmail.com"])
         msg='''Hi, Rishabh a new account has been created and verified on your Codechef Website.
                             
                         Congrats :-) '''
         #mail.send(msg)
         server = smtplib.SMTP("smtp.gmail.com",587)
-        username="rish.gup34@gmail.com"
-        password="test12345678"
-        server.starttls()
+        username="email_sender"
+        password="password_sender_email"
+	server.starttls()
         server.login(username,password)
-        server.sendmail(username, "rish.gupta34@gmail.com",msg)
+        server.sendmail(username, "email_receiver",msg)
     except SignatureExpired:
-        # #msg=Message("Account Deleted!",sender="codechef.app@yahoo.com",recipients=[email])
         # msg='''Sorry, you were to slow in verifying your email which compelled me to delete your account.
 
         #                 No problem you can create a new account in no time.
@@ -275,8 +272,8 @@ def confirm_email(token):
         #                 Rishabh Gupta '''.format(url_for(login))
         # #mail.send(msg)
         # server = smtplib.SMTP("smtp.gmail.com",587)
-        # username="rish.gup34@gmail.com"
-        # password="test12345678"
+        # username="email_sender"
+        # password="password_sender_email"
         # server.starttls()
         # server.login(username,password)
         # server.sendmail(username,email,msg)
